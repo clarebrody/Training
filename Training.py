@@ -82,42 +82,41 @@ import re
 # if __name__ == '__main__':
 #     list_my_word()
 
-#WRITE A FUNCTION TRANSLATE #5
+#WRITE A FUNCTION TRANSLATE #5 first attempt
 
-def translate():
-    #hello world = hohelollolo wowororloldod
-    sentence = raw_input("Type your word: ").strip()
-    print "You have entered: ", sentence
-    print
+# def translate():
+#     #hello world = hohelollolo wowororloldod
+#     sentence = raw_input("Type your word: ").strip()
+#     print "You have entered: ", sentence
+#     print
+#
+#     adding_o(sentence)
+#
+# vowel = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+#
+# def adding_o(sentence):
+# #    print sentence
+# #     for word in sentence:
+#     split_words = sentence.split(" ")
+#     print split_words
 
-    adding_o(sentence)
+#first way trying ******
+#     for word in split_words:
+# #        print word
+#
+#         for char in word:
+# #            print char
+#
+#             if char not in vowel:
+#                 char += str('o'+char)
+#                 return [str(char)]
+#             else:
+#                 return [char]
+#     print word
 
-vowel = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
-
-def adding_o(sentence):
-#    print sentence
-#     for word in sentence:
-    split_words = sentence.split(" ")
-    print split_words
-
-    for word in split_words:
-#        print word
-
-        for char in word:
-#            print char
-
-            if char not in vowel:
-                char += str('o'+char)
-                return str(char)
-            else:
-                return char
-        print " ".join(split_words.split())
+#second way trying *******
 
 
-    # for word in split_words:
-    #     if char not in vowel:
-    #         char+=str('o')
-    #         print str(char)
 
 #joining characters back together
     # str = ''
@@ -127,7 +126,20 @@ def adding_o(sentence):
 #another way to join string..
     #     a = ['char']
     # ''.join(char)
+#
+#
+# if __name__ == '__main__':
+#     translate()
 
+    #WRITE A FUNCTION TRANSLATE #5 second attempt
 
-if __name__ == '__main__':
-    translate()
+def translate(sentence):
+    #hello world = hohelollolo wowororloldod
+    sentence = raw_input("Type your word: ").strip()
+#    print "You have entered: ", sentence
+#    print
+
+    consonants = 'bcdfghjklmnpqrstvwxyz'
+    return ''.join(l + 'o' + l if l in consonants else l for l in sentence)
+
+print (translate("hello world"))
