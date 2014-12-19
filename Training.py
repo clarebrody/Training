@@ -131,15 +131,38 @@ import re
 # if __name__ == '__main__':
 #     translate()
 
-    #WRITE A FUNCTION TRANSLATE #5 second attempt
+    #WRITE A FUNCTION TRANSLATE #5 second attempt (someone else's answer, my bit at the beginning)
 
-def translate(sentence):
+# def translate(sentence):
+#     #hello world = hohelollolo wowororloldod
+#     sentence = raw_input("Type your word: ").strip()
+# #    print "You have entered: ", sentence
+# #    print
+#
+#     consonants = 'bcdfghjklmnpqrstvwxyz'
+#     return ''.join(l + 'o' + l if l in consonants else l for l in sentence)
+#
+# print (translate("hello world"))
+
+    #WRITE A FUNCTION TRANSLATE #5 third attempt
+
+def translate():
     #hello world = hohelollolo wowororloldod
     sentence = raw_input("Type your word: ").strip()
-#    print "You have entered: ", sentence
-#    print
+    print "You have entered: ", sentence
+    print
 
-    consonants = 'bcdfghjklmnpqrstvwxyz'
-    return ''.join(l + 'o' + l if l in consonants else l for l in sentence)
+#    str = 'o'
+    const = 'bcdfghjklmnpqrstvwxyz'
+    final_letter = ''
+    for word in sentence:
+        for letter in word:
+            if letter in const:
+                final_letter += 'o'
+    print final_letter
 
-print (translate("hello world"))
+    return "".join(sentence)
+
+print translate()
+
+#http://www.skymind.com/~ocrow/python_string/
